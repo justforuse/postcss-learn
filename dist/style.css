@@ -1,4 +1,11 @@
+/* Testing import*/
+
+
+/*@import 'normalize.css/normalize.css';*/
+
+
 /* Testing autoprefixer */
+
 
 .autoprefixer {
     display: -webkit-box;
@@ -6,14 +13,239 @@
     display: flex;
 }
 
+
 /* Testing cssnext */
 
+
 .cssnext {
+    background: #ff0000;
     background: rgba(255, 0, 0, 0.9);
 }
 
+
 /* Testing precss */
+
 
 .precss {
         background: green
+}
+
+
+/* Testing compatibility*/
+
+
+@-webkit-keyframes animationExample {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes animationExample {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+.animationThis {
+    -webkit-animation: animationExample 2s;
+            animation: animationExample 2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+/* Testing will-change*/
+
+
+.thisWillChange {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    will-change: transform;
+}
+
+
+/* Testing color-rgba-callback*/
+
+
+.rgbaCallback {
+    background: #000000;
+    background: rgba(0, 0, 0, .5);
+    border: 1px solid #030303;
+    border: 1px solid rgba(3, 3, 3, .8)
+}
+
+
+/* Testing postcss-opacity*/
+
+
+.opacity {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    opacity: 0.8;
+}
+
+
+.pseudo-element:before {
+    content: "haha"
+}
+
+
+/* Testing vmin*/
+
+
+.vmCallback {
+    width: 50vm;
+    width: 50vmin;
+}
+
+
+/* Testing pixrem*/
+
+
+.remFallback {
+    height: 48px;
+    height: 3rem;
+    font: 24px Arial;
+    font: 1.5rem Arial;
+}
+
+
+.remFallback:before {
+    content: "haha";
+    line-height: 25.6px;
+    line-height: 1.6rem;
+}
+
+
+/* Testing media selector*/
+
+
+.column {
+    width: 50%;
+    float: left;
+}
+
+
+.another_column {
+    color: red;
+}
+
+
+/* Testing precss*/
+
+
+.parent {
+    color: red
+}
+
+
+.parent.container {
+    border: 1px solid red;
+}
+
+
+.parent:hover {
+    color: green;
+}
+
+
+.parent .child1 {
+        width: 20px;
+}
+
+
+.parent .child2 {
+        width: 30px;
+}
+
+
+.variable {
+    color: #e45677;
+}
+
+
+.condition{
+        color: green
+}
+
+
+p::nth-child(1){
+        height : calc(10 * 1);
+    }
+
+
+p::nth-child(2){
+        height : calc(10 * 2);
+    }
+
+
+p::nth-child(3){
+        height : calc(10 * 3);
+    }
+
+
+.icon-twitter{
+        background-image:url("./img/twitter.png")
+    }
+
+
+.icon-facebook{
+        background-image:url("./img/facebook.png")
+    }
+
+
+.icon-youtube{
+        background-image:url("./img/youtube.png")
+    }
+
+
+.icon-twitter{
+        color: blue;
+        height: blue;
+    width: 30px;
+    }
+
+
+.icon-youtube{
+        color: red;
+        height: red;
+    width: 40px;
+    }
+
+
+.extend1, .extend2 {
+    padding: 0;
+    margin: 0;
+}
+
+
+.extend1{
+    color:red;
+    font-size: 12px;
+}
+
+
+.extend2{
+    color:red;
+    font-size: 18px;
+}
+
+
+@media (max-width:500px) {
+    .column {
+        width: 25%;
+        float: none;
+    }
+    .another_column {
+        color: white;
+        border-color: black;
+    }
 }

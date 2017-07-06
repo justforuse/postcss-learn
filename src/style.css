@@ -1,3 +1,9 @@
+/* Testing import*/
+
+
+/*@import 'normalize.css/normalize.css';*/
+
+
 /* Testing autoprefixer */
 
 .autoprefixer {
@@ -21,4 +27,170 @@
     @else {
         background: blue;
     }
+}
+
+
+/* Testing compatibility*/
+
+@keyframes animationExample {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.animationThis {
+    animation: animationExample 2s;
+    display: flex;
+}
+
+
+/* Testing will-change*/
+
+.thisWillChange {
+    will-change: transform;
+}
+
+
+/* Testing color-rgba-callback*/
+
+.rgbaCallback {
+    background: rgba(0, 0, 0, .5);
+    border: 1px solid rgba(3, 3, 3, .8)
+}
+
+
+/* Testing postcss-opacity*/
+
+.opacity {
+    opacity: 0.8;
+}
+
+.pseudo-element::before {
+    content: "haha"
+}
+
+
+/* Testing vmin*/
+
+.vmCallback {
+    width: 50vmin;
+}
+
+
+/* Testing pixrem*/
+
+.remFallback {
+    height: 3rem;
+    font: 1.5rem Arial;
+}
+
+.remFallback::before {
+    content: "haha";
+    line-height: 1.6rem;
+}
+
+
+/* Testing media selector*/
+
+.column {
+    width: 50%;
+    float: left;
+}
+
+@media (max-width:500px) {
+    .column {
+        width: 25%;
+        float: none;
+    }
+}
+
+.another_column {
+    color: red;
+}
+
+@media (max-width:500px) {
+    .another_column {
+        color: white;
+        border-color: black;
+    }
+}
+
+
+/* Testing precss*/
+
+.parent {
+    color: red;
+    &.container {
+        border: 1px solid red;
+    }
+    &:hover {
+        color: green;
+    }
+    .child1 {
+        width: 20px;
+    }
+    .child2 {
+        width: 30px;
+    }
+}
+
+$main-color: #e45677;
+.variable {
+    color: $main-color;
+}
+
+$variable : 3;
+.condition{
+    @if $variable > 1{
+        color: green;
+    } @else {
+        color: red;
+    }
+}
+
+@for $i from 1 to 3{
+    p::nth-child($i){
+        height : calc(10 * $i);
+    }
+}
+
+
+$social: twitter, facebook, youtube;
+@each $icon in ($social){
+    .icon-$(icon){
+        background-image:url("./img/$(icon).png")
+    }
+}
+
+@define-mixin icon $web, $color{
+    .icon-$(web){
+        color: $color;
+        height: $color;
+        @mixin-content;
+    }
+}
+@mixin icon twitter, blue{
+    width: 30px;
+}
+@mixin icon youtube, red{
+    width: 40px;   
+};
+
+@define-extend common-extend{
+    padding: 0;
+    margin: 0;
+}
+.extend1{
+    @extend common-extend;
+    color:red;
+    font-size: 12px;
+}
+
+.extend2{
+    @extend common-extend;
+    color:red;
+    font-size: 18px;
 }

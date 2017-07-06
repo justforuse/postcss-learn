@@ -5,8 +5,36 @@ var autoprefixer = require("autoprefixer");
 var cssnext = require("cssnext");
 var precss = require("precss")
 
-gulp.task("css", function(){
-    var processors = [autoprefixer, cssnext, precss];
+
+var color_rgba_fallback = require('postcss-color-rgba-fallback');
+var opacity = require('postcss-opacity');
+var pseudoelements = require('postcss-pseudoelements');
+var vmin = require('postcss-vmin');
+var pixrem = require('pixrem');
+var will_change = require('postcss-will-change');
+
+
+var atImport = require("postcss-import");
+var mqpacker = require("css-mqpacker");
+var cssnano = require("cssnano");
+
+gulp.task("css", function () {
+    var processors = [
+        will_change,
+        autoprefixer({ browsers: "last 3 versions" }),
+        cssnext,
+        precss,
+        color_rgba_fallback,
+        opacity,
+        pseudoelements,
+        vmin,
+        pixrem,
+        // compress and optimize
+        atImport,
+        mqpacker,
+        // 注释掉cssnano，方便看效果
+        // cssnano
+    ];
     return gulp.src("./src/*.css")
         .pipe(postcss(processors))
         .pipe(gulp.dest("./dist"))
