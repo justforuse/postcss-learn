@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Indie Flower";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Indie Flower"),local(IndieFlower),url(//fonts.gstatic.com/s/indieflower/v8/10JVD_humAd5zP2yrFqw6nZ2MAKAc2x4R1uOSeegc5U.eot?#) format("eot"),url(//fonts.gstatic.com/s/indieflower/v8/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2) format("woff2"),url(//fonts.gstatic.com/s/indieflower/v8/10JVD_humAd5zP2yrFqw6nhCUOGz7vYGh680lGh-uXM.woff) format("woff");
+}
+
+
 /* Testing import*/
 
 
@@ -236,6 +244,35 @@ p::nth-child(3){
 .extend2{
     color:red;
     font-size: 18px;
+}
+
+
+/* Testing postcss-crip*/
+
+
+.crip-demo{
+    width:100px;
+    position:absolute;
+    padding:0;
+    margin:0;
+}
+
+
+/* Testing postcss-alias*/
+
+
+.alias-test{
+    width: 100px;
+    position: absolute;
+    border: 1px solid red;
+}
+
+
+/* Testing font*/
+
+
+.font-test{
+    font:"Indie Flower"
 }
 
 

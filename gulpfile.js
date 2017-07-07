@@ -18,6 +18,11 @@ var atImport = require("postcss-import");
 var mqpacker = require("css-mqpacker");
 var cssnano = require("cssnano");
 
+var crip = require("postcss-crip");
+
+var alias = require("postcss-alias");
+
+var font_magician = require("postcss-font-magician");
 gulp.task("css", function () {
     var processors = [
         will_change,
@@ -32,6 +37,9 @@ gulp.task("css", function () {
         // compress and optimize
         atImport,
         mqpacker,
+        crip,
+        alias,
+        font_magician
         // 注释掉cssnano，方便看效果
         // cssnano
     ];

@@ -18,3 +18,53 @@
 - 循环 @for; @each;
 - 混合宏 @define-mixin; @mixin
 - 扩展 @define-extend name; @extend name;
+
+
+
+## 实用插件列表
+- precss 相当于很多插件的结合，可以使用sass语法，条件判断　循环　变量等, 以及import 
+- cssnano 压缩和美化，删除注释
+- cssnext css未来的语法
+
+- postcss-crip 定义速记方式
+```
+.crip-demo{
+    w:100px;
+    pos:absolute;
+    p:0;
+    m:0;
+}
+```
+=> 
+```
+.crip-demo{
+    width:100px;
+    position:absolute;
+    padding:0;
+    margin:0;
+}
+```
+
+- postcss-alias 自定义属性缩写，目的与postcss-crip类似
+
+```
+@alias{
+    my-width: width;
+    my-position: position;
+    my-border: border;
+}
+.alias-test{
+    my-width: 100px;
+    my-position: absolute;
+    my-border: 1px solid red;
+}
+```
+
+=> 
+```
+.alias-test{
+    width: 100px;
+    position: absolute;
+    border: 1px solid red;
+}
+```
