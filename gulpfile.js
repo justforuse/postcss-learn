@@ -47,3 +47,15 @@ gulp.task("css", function () {
         .pipe(postcss(processors))
         .pipe(gulp.dest("./dist"))
 })
+
+gulp.task("demo", function(){
+    var processors = [
+        precss,
+        cssnext,
+        autoprefixer
+    ];
+
+    return gulp.src("./src/blog-demo.css")
+        .pipe(postcss(processors))
+        .pipe(gulp.dest("./dist"))
+})

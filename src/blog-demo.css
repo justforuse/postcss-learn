@@ -1,0 +1,23 @@
+/*测试Precss*/
+.precss {
+    color: red;
+    font-size: 14px;
+    .child1 {
+        color: green;
+    }
+    &.active {
+        font-weight: bold;
+    }
+    &:hover {
+        font-size: 18px;
+    }
+}
+/*测试cssnext*/
+.cssnext{
+  color: color(red alpha(-10%));
+}
+
+/*测试autoprefixer*/
+.autoprefixer{
+    display:flex;
+}

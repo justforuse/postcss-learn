@@ -1,0 +1,24 @@
+/*测试Precss*/
+.precss {
+    color: red;
+    font-size: 14px;
+}
+.precss .child1 {
+        color: green;
+    }
+.precss.active {
+    font-weight: bold;
+}
+.precss:hover {
+    font-size: 18px;
+}
+/*测试cssnext*/
+.cssnext{
+  color: rgba(255, 0, 0, 0.9);
+}
+/*测试autoprefixer*/
+.autoprefixer{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}

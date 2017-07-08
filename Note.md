@@ -25,7 +25,7 @@
 - precss 相当于很多插件的结合，可以使用sass语法，条件判断　循环　变量等, 以及import 
 - cssnano 压缩和美化，删除注释
 - cssnext css未来的语法
-
+- stylelint [地址](https://stylelint.io/user-guide/postcss-plugin/)
 - postcss-crip 定义速记方式
 ```
 .crip-demo{
